@@ -65,7 +65,7 @@ class TeXPreprocessor(markdown.preprocessors.Preprocessor):
         tmp_file.close()
 
         # compile LaTeX document. A DVI file is created
-        status = call(('latex %s' % path).split(), stdout=PIPE)
+        status = call(('rubber %s' % path).split(), stdout=PIPE)
         
         # clean up if the above failed
         if status:
